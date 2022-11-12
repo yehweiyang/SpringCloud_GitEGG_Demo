@@ -1,3 +1,7 @@
+
+**/target/**
+/**/target/**
+
 /*/.idea/*
 .idea/
 SpringCloud_GitEGG_Demo.iml

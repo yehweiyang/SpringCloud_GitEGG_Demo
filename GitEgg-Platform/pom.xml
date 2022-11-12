@@ -12,6 +12,7 @@
         <module>gitegg-platform-bom</module>
         <module>gitegg-platform-db</module>
         <module>gitegg-platform-mybatis</module>
+        <module>gitegg-platform-swagger</module>
     </modules>
     <properties>
         <!-- jdk版本1.8 -->
