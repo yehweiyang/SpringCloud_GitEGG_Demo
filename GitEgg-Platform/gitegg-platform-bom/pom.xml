@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>GitEgg-Platform</artifactId>
+        <groupId>com.weiyang</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.gitegg.platform</groupId>
+    <artifactId>gitegg-platform-bom</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${gitegg.project.version}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- jdk版本1.8 -->
+        <java.version>16</java.version>
+        <!-- maven-compiler-plugin外掛版本，Java程式碼編譯 -->
+        <maven.plugin.version>3.8.6</maven.plugin.version>
+        <!-- maven編譯時指定編碼UTF-8 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- 項目統一字元集編碼UTF-8 -->
+        <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
+        <!-- 項目統一字元集編碼UTF-8 -->
+        <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
+
+        <!-- GitEgg項目統一設定版本號 -->
+        <gitegg.project.version>1.0-SNAPSHOT</gitegg.project.version>
+
+        <!-- mysql資料庫驅動 -->
+        <mysql.connector.version>8.0.17</mysql.connector.version>
+        <!-- postgresql資料庫驅動 -->
+        <postgresql.connector.version>9.1-901.jdbc4</postgresql.connector.version>
+        <!-- 資料庫連接池Druid -->
+        <druid.version>1.1.23</druid.version>
+        <!-- Mybatis Plus增強工具 -->
+        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- gitegg資料庫驅動及連接池 -->
+            <dependency>
+                <groupId>com.gitegg.platform</groupId>
+                <artifactId>gitegg-platform-db</artifactId>
+                <version>${gitegg.project.version}</version>
+            </dependency>
+            <!-- gitegg mybatis-plus -->
+            <dependency>
+                <groupId>com.gitegg.platform</groupId>
+                <artifactId>gitegg-platform-mybatis</artifactId>
+                <version>${gitegg.project.version}</version>
+            </dependency>
+            <!-- mysql資料庫驅動 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <!-- postgresql資料庫驅動 -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.connector.version}</version>
+            </dependency>
+            <!-- 資料庫連接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- Mybatis Plus增強工具 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

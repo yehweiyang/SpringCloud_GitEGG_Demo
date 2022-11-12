@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.weiyang</groupId>
+    <artifactId>GitEgg-Platform</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>gitegg-platform-bom</module>
+        <module>gitegg-platform-db</module>
+        <module>gitegg-platform-mybatis</module>
+    </modules>
+    <properties>
+        <!-- jdk版本1.8 -->
+        <java.version>16</java.version>
+        <!-- maven-compiler-plugin外掛版本，Java程式碼編譯 -->
+        <maven.plugin.version>3.8.6</maven.plugin.version>
+        <!-- maven編譯時指定編碼UTF-8 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- 項目統一字元集編碼UTF-8 -->
+        <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
+        <!-- 項目統一字元集編碼UTF-8 -->
+        <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
+
+        <!-- SpringBoot版本號 -->
+        <spring.boot.version>2.5.14</spring.boot.version>
+        <!-- SpringCloud版本號 -->
+        <spring.cloud.version>2020.0.6</spring.cloud.version>
+        <!-- SpringPlatform版本號 -->
+        <spring.platform.version>Cairo-SR8</spring.platform.version>
+
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+
+
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileactive>dev</profileactive>
+            </properties>
+            <activation>
+                <!--默認為dev環境打包方式-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileactive>test</profileactive>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profileactive>pro</profileactive>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>
