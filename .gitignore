@@ -1,6 +1,7 @@
+/*/.idea/*
 .idea/
 SpringCloud_GitEGG_Demo.iml
-gitegg-service/gitegg-service-system/target
+GitEgg-Cloud/gitegg-service/gitegg-service-system/target
 
 # Compiled class file
 *.class
