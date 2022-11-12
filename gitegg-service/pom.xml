@@ -10,11 +10,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>gitegg-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>gitegg-service-base</module>
+        <module>gitegg-service-bigdata</module>
+        <module>gitegg-service-system</module>
+    </modules>
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <dependencies>
+        <!-- spring boot web内核包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 健康监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- gitegg資料庫驅動及連接池 -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-db</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- gitegg mybatis-plus -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-mybatis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

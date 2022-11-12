@@ -1,0 +1,53 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: gitegg-service-system
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/gitegg_cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+    initialSize: 1
+    minIdle: 3
+    maxActive: 20
+    # 組態獲取連接等待超時的時間
+    maxWait: 60000
+    # 組態間隔多久才進行一次檢測，檢測需要關閉的空閒連接，單位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 組態一個連接在池中最小生存的時間，單位是毫秒
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    # 打開PSCache，並且指定每個連接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 組態監控統計攔截的filters，去掉後監控介面sql無法統計，'wall'用於防火牆
+    filters: config,stat,slf4j
+    # 通過connectProperties屬性來打開mergeSql功能；慢SQL記錄
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;
+    # 合併多個DruidDataSource的監控資料
+    useGlobalDataSourceStat: true
+  mybatis-plus:
+    mapper-locations: classpath*:/com/gitegg/*/*/mapper/*Mapper.xml
+    typeAliasesPackage: com.gitegg.*.*.entity
+    global-config:
+      #主鍵類型  0:"資料庫ID自增", 1:"使用者輸入ID",2:"全域唯一ID (數字類型唯一ID)", 3:"全域唯一ID UUID";
+      id-type: 2
+      #欄位策略 0:"忽略判斷",1:"非 NULL 判斷"),2:"非空判斷"
+      field-strategy: 2
+      #駝峰下劃線轉換
+      db-column-underline: true
+      #刷新mapper 偵錯神器
+      refresh-mapper: true
+      #資料庫大寫下劃線轉換
+      #capital-mode: true
+      #邏輯刪除組態
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: false
