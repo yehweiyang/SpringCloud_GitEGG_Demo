@@ -13,6 +13,7 @@
         <module>gitegg-platform-db</module>
         <module>gitegg-platform-mybatis</module>
         <module>gitegg-platform-swagger</module>
+        <module>gitegg-platform-boot</module>
     </modules>
     <properties>
         <!-- jdk版本1.8 -->
@@ -37,7 +38,20 @@
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
 
+    </dependencies>
 
     <build>
         <finalName>${project.name}</finalName>
