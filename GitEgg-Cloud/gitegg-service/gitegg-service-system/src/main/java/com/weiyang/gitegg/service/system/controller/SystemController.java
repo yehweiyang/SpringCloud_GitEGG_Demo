@@ -1,14 +1,14 @@
 package com.weiyang.gitegg.service.system.controller;
 
-import com.weiyang.platform.boot.common.base.Result;
+import com.weiyang.gitegg.service.system.dto.SystemDTO;
 import com.weiyang.gitegg.service.system.service.ISystemService;
-import com.weiyang.platform.boot.common.exception.SystemException;
+import com.weiyang.platform.boot.common.base.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "system")
@@ -41,6 +41,12 @@ public class SystemController {
     @ApiOperation(value = "自訂異常及返回測試介面")
     public Result<String> systemException() {
         return Result.data(systemService.systemException());
+    }
+
+    @PostMapping(value = "valid")
+    @ApiOperation(value = "參數校驗測試介面")
+    public Result<SystemDTO> valid(@Valid @RequestBody SystemDTO systemDTO) {
+        return Result.data(systemDTO);
     }
 
 
