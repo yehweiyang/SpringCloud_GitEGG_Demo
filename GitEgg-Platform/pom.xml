@@ -36,6 +36,22 @@
 
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+
+
+        <!-- ****解決依賴問題再刪除**** -->
+        <!-- GitEgg項目統一設定版本號 -->
+        <gitegg.project.version>1.0-SNAPSHOT</gitegg.project.version>
+
+        <!-- mysql資料庫驅動 -->
+        <mysql.connector.version>8.0.17</mysql.connector.version>
+        <!-- postgresql資料庫驅動 -->
+        <postgresql.connector.version>9.1-901.jdbc4</postgresql.connector.version>
+        <!-- 資料庫連接池Druid -->
+        <druid.version>1.1.23</druid.version>
+        <!-- Mybatis Plus增強工具 -->
+        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+        <knife4j.version>2.0.9</knife4j.version>
+        <!-- ****解決依賴問題再刪除**** -->
     </properties>
 
     <dependencies>
@@ -107,5 +123,81 @@
             </properties>
         </profile>
     </profiles>
+
+    <!-- 等解決依賴問題再刪除 父pom的dependencyManagement -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- gitegg資料庫驅動及連接池 -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-db</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- gitegg mybatis-plus -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-mybatis</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- gitegg swagger2-knife4j -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-swagger</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- mysql資料庫驅動 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <!-- postgresql資料庫驅動 -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.connector.version}</version>
+            </dependency>
+            <!-- 資料庫連接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- Mybatis Plus增強工具 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <!-- Swagger2 knife4j bom方式引入 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-dependencies</artifactId>
+                <version>${knife4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>2.7.5</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>2.0.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.5.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

@@ -3,14 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>GitEgg-Platform</artifactId>
-        <groupId>com.weiyang</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.14</version>
+        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.gitegg.platform</groupId>
+    <groupId>com.weiyang</groupId>
     <artifactId>gitegg-platform-bom</artifactId>
     <name>${project.artifactId}</name>
     <version>${gitegg.project.version}</version>
@@ -42,54 +43,75 @@
         <knife4j.version>2.0.9</knife4j.version>
 
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- gitegg資料庫驅動及連接池 -->
-            <dependency>
-                <groupId>com.weiyang</groupId>
-                <artifactId>gitegg-platform-db</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <!-- gitegg mybatis-plus -->
-            <dependency>
-                <groupId>com.weiyang</groupId>
-                <artifactId>gitegg-platform-mybatis</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <!-- mysql資料庫驅動 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.connector.version}</version>
-            </dependency>
-            <!-- postgresql資料庫驅動 -->
-            <dependency>
-                <groupId>postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.connector.version}</version>
-            </dependency>
-            <!-- 資料庫連接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-            <!-- Mybatis Plus增強工具 -->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis.plus.version}</version>
-            </dependency>
-            <!-- Swagger2 knife4j bom方式引入 -->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-dependencies</artifactId>
-                <version>${knife4j.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+<!-- 先註解 等解決依賴問題再說-->
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            &lt;!&ndash; gitegg資料庫驅動及連接池 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.weiyang</groupId>-->
+<!--                <artifactId>gitegg-platform-db</artifactId>-->
+<!--                <version>1.0-SNAPSHOT</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; gitegg mybatis-plus &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.weiyang</groupId>-->
+<!--                <artifactId>gitegg-platform-mybatis</artifactId>-->
+<!--                <version>1.0-SNAPSHOT</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; gitegg swagger2-knife4j &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.weiyang</groupId>-->
+<!--                <artifactId>gitegg-platform-swagger</artifactId>-->
+<!--                <version>1.0-SNAPSHOT</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; mysql資料庫驅動 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>mysql</groupId>-->
+<!--                <artifactId>mysql-connector-java</artifactId>-->
+<!--                <version>${mysql.connector.version}</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; postgresql資料庫驅動 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>postgresql</groupId>-->
+<!--                <artifactId>postgresql</artifactId>-->
+<!--                <version>${postgresql.connector.version}</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; 資料庫連接池 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--                <version>${druid.version}</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; Mybatis Plus增強工具 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.baomidou</groupId>-->
+<!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--                <version>${mybatis.plus.version}</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; Swagger2 knife4j bom方式引入 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.github.xiaoymin</groupId>-->
+<!--                <artifactId>knife4j-dependencies</artifactId>-->
+<!--                <version>${knife4j.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>javax.validation</groupId>-->
+<!--                <artifactId>validation-api</artifactId>-->
+<!--                <version>2.0.1.Final</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-validation</artifactId>-->
+<!--                <version>2.7.5</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.github.xiaoymin</groupId>-->
+<!--                <artifactId>knife4j-spring-boot-starter</artifactId>-->
+<!--                <version>2.0.9</version>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
 
 </project>
