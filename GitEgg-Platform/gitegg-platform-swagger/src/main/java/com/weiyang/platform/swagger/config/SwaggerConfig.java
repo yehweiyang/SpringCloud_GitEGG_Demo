@@ -14,34 +14,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 @EnableSwagger2WebMvc
 public class SwaggerConfig {
 
-//    @Bean(value = "GitEggApi")
-//    public Docket GitEggApi() {
-//        Docket docket = new Docket(DocumentationType.SWAGGER_2)
-//                .apiInfo(apiInfo())
-//                //分組名稱
-//                .groupName("2.X版本")
-//                .select()
-//                //這裡指定Controller掃描包路徑
-//                .apis(RequestHandlerSelectors.basePackage("com.weiyang.*.*.controller"))
-//                .apis(RequestHandlerSelectors.basePackage("com.weiyang.service.system.controller"))
-//                .paths(PathSelectors.any())
-//                .build();
-//        return docket;
-//    }
-
-    @Bean(value = "dockerBean")
-    public Docket dockerBean() {
-        //指定使用Swagger2規範
-        Docket docket=new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(new ApiInfoBuilder()
-                        //描述欄位支援Markdown語法
-                        .description("# Knife4j RESTful APIs")
-                        .termsOfServiceUrl("https://doc.xiaominfo.com/")
-                        .contact("xiaoymin@foxmail.com")
-                        .version("1.0")
-                        .build())
+    @Bean(value = "GitEggApi")
+    public Docket GitEggApi() {
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
                 //分組名稱
-                .groupName("使用者服務")
+                .groupName("2.X版本")
                 .select()
                 //這裡指定Controller掃描包路徑
                 .apis(RequestHandlerSelectors.basePackage("com.weiyang.service.system.controller"))
@@ -49,6 +27,7 @@ public class SwaggerConfig {
                 .build();
         return docket;
     }
+
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().version("1.0.0")
