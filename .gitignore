@@ -3,6 +3,7 @@
 SpringCloud_GitEGG_Demo.iml
 GitEgg-Cloud/gitegg-service/gitegg-service-system/target
 
+*.iml
 # Compiled class file
 *.class
 
