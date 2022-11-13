@@ -6,17 +6,25 @@ import com.weiyang.platform.boot.common.base.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "system")
-@AllArgsConstructor
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 @Api(tags = "gitegg-system")
+@RefreshScope
 public class SystemController {
 
     private final ISystemService systemService;
+
+    @Value("${spring.datasource.maxActive}")
+    private String nacosMaxActiveType;
 
     @GetMapping(value = "list")
     @ApiOperation(value = "system list介面")
@@ -49,5 +57,10 @@ public class SystemController {
         return Result.data(systemDTO);
     }
 
+    @PostMapping(value = "nacos")
+    @ApiOperation(value = "Nacos讀取組態檔案測試介面")
+    public Result<String> nacos() {
+        return Result.data(nacosMaxActiveType);
+    }
 
 }

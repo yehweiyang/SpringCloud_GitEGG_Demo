@@ -18,6 +18,11 @@
     </modules>
 
     <dependencies>
+        <!-- Spring Boot(2.4)移除初始載入bootstrap.yml 所以需額外加入依賴 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <!-- gitegg Spring Boot自訂及擴展 -->
         <dependency>
             <groupId>com.weiyang</groupId>
