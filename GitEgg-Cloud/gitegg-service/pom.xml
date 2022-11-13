@@ -24,21 +24,11 @@
             <artifactId>gitegg-platform-boot</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- gitegg swagger2-knife4j -->
+        <!-- gitegg Spring Cloud自訂及擴展 -->
         <dependency>
             <groupId>com.weiyang</groupId>
-            <artifactId>gitegg-platform-swagger</artifactId>
+            <artifactId>gitegg-platform-cloud</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <!-- spring boot web内核包 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- spring boot 健康监控 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!-- gitegg資料庫驅動及連接池 -->
         <dependency>
@@ -51,6 +41,22 @@
             <groupId>com.weiyang</groupId>
             <artifactId>gitegg-platform-mybatis</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- gitegg swagger2-knife4j -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-swagger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- spring boot web核心包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 健康監控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 

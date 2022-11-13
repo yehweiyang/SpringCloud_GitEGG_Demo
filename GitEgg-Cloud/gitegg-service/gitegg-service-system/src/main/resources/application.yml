@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: gitegg-service-system
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://127.0.0.1:3306/gitegg_cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
