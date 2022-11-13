@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * gitegg-system 啟動類
  */
-@MapperScan("com.weiyang.gitegg.service.system.mapper")
 @SpringBootApplication
 @ComponentScan(basePackages = "com.weiyang")
 public class GitEggSystemApplication {
