@@ -130,6 +130,29 @@
     <!-- 等解決依賴問題再刪除 父pom的dependencyManagement -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-bom</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
             <!-- gitegg資料庫驅動及連接池 -->
             <dependency>
                 <groupId>com.weiyang</groupId>

@@ -3,24 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>gitegg-service</artifactId>
+        <artifactId>gitegg-service-api</artifactId>
         <groupId>org.weiyang.cloud</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>gitegg-service-base</artifactId>
+    <artifactId>gitegg-service-system-api</artifactId>
     <name>${project.artifactId}</name>
-    <version>${project.parent.version}</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <dependencies>
-        <!-- gitegg-service-system 的fegin公共呼叫方法 -->
-        <dependency>
-            <groupId>org.weiyang.cloud</groupId>
-            <artifactId>gitegg-service-system-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>

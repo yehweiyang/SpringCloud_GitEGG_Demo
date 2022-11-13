@@ -6,25 +6,13 @@
         <artifactId>gitegg-service</artifactId>
         <groupId>org.weiyang.cloud</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>gitegg-service-system</artifactId>
-    <dependencies>
-        <!-- spring boot web内核包 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- spring boot 健康监控 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-    </dependencies>
+    <name>${project.artifactId}</name>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
 
 </project>

@@ -63,4 +63,17 @@ public class SystemController {
         return Result.data(nacosMaxActiveType);
     }
 
+
+    @GetMapping(value = "api/by/abc")
+    @ApiOperation(value = "Fegin Get呼叫測試介面")
+    public Result<Object> feginById(@RequestParam("id") String id) {
+        return Result.data(systemService.list());
+    }
+
+    @PostMapping(value = "api/by/dto")
+    @ApiOperation(value = "Fegin Post呼叫測試介面")
+    public Result<Object> feginByDto(@Valid @RequestBody SystemDTO systemDTO) {
+        return Result.data(systemDTO);
+    }
+
 }

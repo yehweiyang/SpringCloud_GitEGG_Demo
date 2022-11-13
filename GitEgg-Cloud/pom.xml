@@ -6,6 +6,7 @@
 
     <groupId>org.weiyang.cloud</groupId>
     <artifactId>SpringCloud_GitEGG_Demo</artifactId>
+    <name>gitegg-cloud</name>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -67,6 +68,25 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- gitegg Spring Cloud自訂及擴展 -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-cloud</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- gitegg資料庫驅動及連接池 -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-db</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- gitegg mybatis-plus -->
+            <dependency>
+                <groupId>com.weiyang</groupId>
+                <artifactId>gitegg-platform-mybatis</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -93,6 +113,7 @@
                     <configuration>
                         <fork>true</fork>
                         <finalName>${project.build.finalName}</finalName>
+                        <mainClass>com.weiyang.gitegg.service.system.GitEggSystemApplication</mainClass>
                     </configuration>
                     <executions>
                         <execution>

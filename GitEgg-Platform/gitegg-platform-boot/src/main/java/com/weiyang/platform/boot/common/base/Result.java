@@ -1,9 +1,13 @@
 package com.weiyang.platform.boot.common.base;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.weiyang.platform.boot.common.enums.ResultCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * @ClassName: Result
@@ -14,8 +18,13 @@ import lombok.*;
 @ApiModel(description = "通用響應類")
 @Getter
 @ToString
-public class Result<T> {
+@JsonSerialize
+@NoArgsConstructor
+@AllArgsConstructor
+public class Result<T> implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = -9147932925661257195L;
     @ApiModelProperty(value = "是否成功", required = true)
     private boolean success;
 

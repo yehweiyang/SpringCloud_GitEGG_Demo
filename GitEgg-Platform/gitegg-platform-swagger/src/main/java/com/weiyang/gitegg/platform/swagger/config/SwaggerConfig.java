@@ -19,10 +19,11 @@ public class SwaggerConfig {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 //分組名稱
-                .groupName("2.X版本")
+                .groupName("2.X123456版本")
                 .select()
                 //這裡指定Controller掃描包路徑
-                .apis(RequestHandlerSelectors.basePackage("com.weiyang.gitegg.service.system.controller"))
+//                .apis(RequestHandlerSelectors.basePackage("com.weiyang.gitegg.service.system.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.weiyang"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;

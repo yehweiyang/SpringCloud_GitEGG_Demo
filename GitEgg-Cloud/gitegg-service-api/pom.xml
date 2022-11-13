@@ -10,5 +10,35 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>gitegg-service-api</artifactId>
+    <name>${project.artifactId}</name>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>gitegg-service-base-api</module>
+        <module>gitegg-service-bigdata-api</module>
+        <module>gitegg-service-system-api</module>
+    </modules>
+
+    <dependencies>
+        <!-- gitegg Spring Boot自訂及擴展 -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-boot</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- gitegg Spring Cloud自訂及擴展 -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-cloud</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- gitegg swagger2-knife4j -->
+        <dependency>
+            <groupId>com.weiyang</groupId>
+            <artifactId>gitegg-platform-swagger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
